@@ -12,5 +12,13 @@
 	<input type="text" name="txtAPMaterno" placeholder="Apellido materno"></input><br><br>
 	<input type="text" name="txtEmail" placeholder="Correo"></input><br><br>
 	<input type="submit" value="Actualizar"></input>
+</form>
+<form action="<?php echo base_url();?>cpersona/eliminarPersona" method="POST">
+	
+	<h3>Eliminar por id</h3>	
+	<input type="text" name="txtIdPersona" placeholder="ID"></input><br><br>
+	<input type="submit" value="Eliminar"></input>
+</form>
+
 </body>
 </html>

@@ -48,4 +48,9 @@ public function guardar(){
 	redirect('cpersona/index');
 
    }
+   public function eliminarPersona(){
+   	$idP=$this->input->post('txtIdPersona');
+    $this->musuario->eliminarUsuario($idP);
+    $this->mpersona->eliminarPersona($idP);
+   }
 }

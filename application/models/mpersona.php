@@ -31,6 +31,15 @@ $this->db->where('idPersona',$this->session->userdata('s_idPersona'));
 
 return 1;
  }
-}        
+ public function eliminarPersona($idP){
+    $campo = array(
+      'idPersona' => $idP
+      );
+    $this->db->delete('persona', $campo);
+  //$this->db->where('idPersona',$idP);
+  //$this->db->delete('usuario');
+} 
 
+
+}
 

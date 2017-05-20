@@ -15,4 +15,9 @@ class Musuario extends CI_Model
   		);
   	$this->db->insert('usuario',$campos);
   }
+  public function eliminarUsuario($idP){
+       $this->db->where('idPersona',$idP);
+       $this->db->delete('usuario');
+       
+  }
 }
