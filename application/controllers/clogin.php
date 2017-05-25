@@ -19,7 +19,10 @@ class Clogin extends CI_Controller
  	$res=$this->mlogin->ingresar($usu,$pass);
 
  	if ($res==1){
+ 		 $this->load->view('layout/header');
+ 		 $this->load->view('layout/menu');
         $this->load->view('persona/vupdatepersona');
+        $this->load->view('layout/footer');
  	}else{
  	  $data['mensaje']="Usuario o contraseña erronea";
       $this->load->view("vlogin",$data);

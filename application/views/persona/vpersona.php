@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>403 Forbidden</title>
-</head>
-<body>
+
 <h1>Cargo Persona</h1>
 <form action="<?php echo base_url(); ?>cpersona/guardar" method="POST">
 	<table>
@@ -48,5 +43,3 @@
 	</table>
 	</form>
 	<a href="<?php echo base_url();?>clogin">Login</a>		
-</body>
-</html>
