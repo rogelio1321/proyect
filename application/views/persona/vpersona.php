@@ -58,6 +58,13 @@
         
       </div>
       <div class="form-group has-feedback">
+        <div class="form-group">
+                  <select class="form-control">
+                    <option value="">Ciudad</option>
+                  </select>
+                </div>
+      </div>
+      <div class="form-group has-feedback">
         <input type="text" class="form-control" name="txtUsuario" placeholder="Usuario">
         
       </div>
@@ -101,6 +108,11 @@
     });
   });
 </script>
+<script type="text/javascript">
+   var baseurl = "<?php echo base_url();?>";
+</script>
+
 </body>
 </html>
+
 

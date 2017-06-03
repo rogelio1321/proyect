@@ -50,5 +50,11 @@
 <script src="<?php echo base_url();?>assets/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo base_url();?>assets/dist/js/demo.js"></script>
+<!-- scripts del proyecto -->
+
+<?php if($this->uri->segment(1)=='cpersona'){?>
+        <script src="<?= base_url(); ?>js/persona.js"></script>
+ <?php }?>
+
 </body>
 </html>
