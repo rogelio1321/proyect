@@ -7,16 +7,16 @@ class Musuario extends CI_Model
  {
    parent::__construct();
   }
-  public function guardarUsuario($param){
-  	$campos = array(
-  		'nomUsuario'=>$param['nomUsuario'],
-  		'clave'=>$param['clave'],
-  		'idPersona'=>$param['idPersona']
+  public function guardarUsuario($parameter){
+  	$fields = array(
+  		'nomUsuario'=>$parameter['nomUsuario'],
+  		'clave'=>$parameter['clave'],
+  		'idPersona'=>$parameter['idPersona']
   		);
-  	$this->db->insert('usuario',$campos);
+  	$this->db->insert('usuario',$fields);
   }
-  public function eliminarUsuario($idP){
-       $this->db->where('idPersona',$idP);
+  public function eliminarUsuario($idPerson){
+       $this->db->where('idPersona',$idPerson);
        $this->db->delete('usuario');
        
   }

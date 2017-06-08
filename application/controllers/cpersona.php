@@ -20,40 +20,40 @@ public function index(){
   }
 public function guardar(){
 	//personas
-	$param['dni']=$this->input->post('txtDNI');
-	$param['nombre']=$this->input->post('txtNombre');
-	$param['appaterno']=$this->input->post('txtApPaterno');
-	$param['apmaterno']=$this->input->post('txtApMaterno');
-	$param['email']=$this->input->post('txtEmail');
-	$param['fecnac']=$this->input->post('datFecNac');
+	$parameter['dni']=$this->input->post('txtDNI');
+	$parameter['nombre']=$this->input->post('txtNombre');
+	$parameter['appaterno']=$this->input->post('txtApPaterno');
+	$parameter['apmaterno']=$this->input->post('txtApMaterno');
+	$parameter['email']=$this->input->post('txtEmail');
+	$parameter['fecnac']=$this->input->post('datFecNac');
 	//usuario
-	$paramUsu['nomUsuario']=$this->input->post('txtUsuario');
-	$paramUsu['clave']= sha1($this->input->post('txtClave'));
+	$parameterUser['nomUsuario']=$this->input->post('txtUsuario');
+	$parameterUser['clave']= sha1($this->input->post('txtClave'));
 
-    $lastId=$this->mpersona->guardar($param);
+    $lastId=$this->mpersona->guardar($parameter);
 
     if ($lastId>0){
-    	$paramUsu['idPersona']=$lastId;
-    	$this->musuario->guardarUsuario($paramUsu);
+    	$parameterUser['idPersona']=$lastId;
+    	$this->musuario->guardarUsuario($parameterUser);
     }
 
 
    }
    public function actualizarDatos(){
-   	$param['nombre']=$this->input->post('txtNombre');
-	$param['appaterno']=$this->input->post('txtApPaterno');
-	$param['apmaterno']=$this->input->post('txtApMaterno');
-	$param['email']=$this->input->post('txtEmail');
+  $parameter['nombre']=$this->input->post('txtNombre');
+	$parameter['appaterno']=$this->input->post('txtApPaterno');
+	$parameter['apmaterno']=$this->input->post('txtApMaterno');
+	$parameter['email']=$this->input->post('txtEmail');
 
-	$this->mpersona->actualizarDatos($param);
+	$this->mpersona->actualizarDatos($parameter);
 
 	//$this->load->view('persona/vpersona');
 	redirect('cpersona/index');
 
    }
    public function eliminarPersona(){
-   	$idP=$this->input->post('txtIdPersona');
-    $this->musuario->eliminarUsuario($idP);
-    $this->mpersona->eliminarPersona($idP);
+   	$idPerson=$this->input->post('txtIdPersona');
+    $this->musuario->eliminarUsuario($idPerson);
+    $this->mpersona->eliminarPersona($idPerson);
    }
 }

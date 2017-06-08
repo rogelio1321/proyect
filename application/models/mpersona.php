@@ -8,34 +8,34 @@ class Mpersona extends CI_Model
    parent::__construct();
   }
  
- public function guardar($param){
-  $campos=array(
-  	'dni'=>$param['dni'],
-    'nombre'=>$param['nombre'],
-    'appaterno'=>$param['appaterno'],
-    'apmaterno'=>$param['apmaterno'],
-    'email'=>$param['email'],
-    'fecnac'=> date('Y-m-d',strtotime(str_replace('/','-',$param['fecnac'])))
+ public function guardar($parameter){
+  $fields=array(
+  	'dni'=>$parameter['dni'],
+    'nombre'=>$parameter['nombre'],
+    'appaterno'=>$parameter['appaterno'],
+    'apmaterno'=>$parameter['apmaterno'],
+    'email'=>$parameter['email'],
+    'fecnac'=> date('Y-m-d',strtotime(str_replace('/','-',$parameter['fecnac'])))
   );
-  $this->db->insert('persona',$campos);
+  $this->db->insert('persona',$fields);
   return $this->db->insert_id();
  }
- public function actualizarDatos($param){
-    $campos = array(
-    'nombre'=>$param['nombre'],
-    'appaterno'=>$param['appaterno'],
-    'apmaterno'=>$param['apmaterno'],
-    'email'=>$param['email'],);
-$this->db->update('persona',$campos);
+ public function actualizarDatos($parameter){
+    $field = array(
+    'nombre'=>$parameter['nombre'],
+    'appaterno'=>$parameter['appaterno'],
+    'apmaterno'=>$parameter['apmaterno'],
+    'email'=>$parameter['email'],);
+$this->db->update('persona',$fields);
 $this->db->where('idPersona',$this->session->userdata('s_idPersona'));
 
 return 1;
  }
- public function eliminarPersona($idP){
-    $campo = array(
-      'idPersona' => $idP
+ public function eliminarPersona($idPerson){
+    $fields = array(
+      'idPersona' => $idPerson
       );
-    $this->db->delete('persona', $campo);
+    $this->db->delete('persona', $fields);
   //$this->db->where('idPersona',$idP);
   //$this->db->delete('usuario');
 } 

@@ -4,24 +4,22 @@ class Mlogin extends CI_Model
 {
 	
  
-   public function ingresar($usu,$pass){
    	$this->db->select('p.idPersona, u.idUsuario, p.nombre, p.appaterno, p.apmaterno');
     $this->db->from('usuario u');
     $this->db->join('persona p', 'p.idPersona = u.idPersona');
-    $this->db->where('u.nomUsuario',$usu);
-    $this->db->where('u.clave',$pass);
+    $this->db->where('u.nomUsuario',$user);
+    $this->db->where('u.clave',$password);
     
     $resultado=$this->db->get();
     if ($resultado->num_rows() == 1){
-        $r=$resultado->row();
+        $result=$resultado->row();
 
-        $s_usuario = array(
-            's_idPersona'=> $r->idPersona,
-        	's_idusuario' => $r->idUsuario,
-        	's_usuario'=>$r->nombre.", ".$r->appaterno." ".$r->apmaterno
+            's_idPersona'=> $result->idPersona,
+        	's_idusuario' => $result->idUsuario,
+        	's_usuario'=>$result->nombre.", ".$result->appaterno." ".$result->apmaterno
         	);
 
-        $this->session->set_userdata($s_usuario);
+        $this->session->set_userdata($s_user);
         //$this->session->userdata('$_idUsuario', $r->idUsuario);
         //$this->session->userdata('$_usuario', $r->nombre, ", ".$r->appaterno);
         return 1;
