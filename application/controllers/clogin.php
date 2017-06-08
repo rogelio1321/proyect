@@ -13,10 +13,10 @@ class Clogin extends CI_Controller
  	$this->load->view("vlogin",$data);
  }
  public function ingresar(){
- 	$usu=$this->input->post('txtUsuario');
- 	$pass=sha1($this->input->post('txtClave'));
+ 	$user=$this->input->post('txtUsuario');
+ 	$password=sha1($this->input->post('txtClave'));
 
- 	$res=$this->mlogin->ingresar($usu,$pass);
+ 	$res=$this->mlogin->ingresar($user,$password);
 
  	if ($res==1){
  		 $this->load->view('layout/header');

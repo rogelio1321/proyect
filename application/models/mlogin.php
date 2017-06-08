@@ -4,6 +4,7 @@ class Mlogin extends CI_Model
 {
 	
  
+   public function ingresar($user,$password){
    	$this->db->select('p.idPersona, u.idUsuario, p.nombre, p.appaterno, p.apmaterno');
     $this->db->from('usuario u');
     $this->db->join('persona p', 'p.idPersona = u.idPersona');
@@ -14,6 +15,7 @@ class Mlogin extends CI_Model
     if ($resultado->num_rows() == 1){
         $result=$resultado->row();
 
+        $s_user = array(
             's_idPersona'=> $result->idPersona,
         	's_idusuario' => $result->idUsuario,
         	's_usuario'=>$result->nombre.", ".$result->appaterno." ".$result->apmaterno
