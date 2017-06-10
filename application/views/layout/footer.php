@@ -53,7 +53,7 @@
 <!-- scripts del proyecto -->
 
 <?php if($this->uri->segment(1)=='cpersona'){?>
-        <script src="<?= base_url(); ?>js/persona.js"></script>
+        <script src="<?= base_url(); ?>js/person.js"></script>
  <?php }?>
 
 </body>

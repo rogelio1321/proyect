@@ -1,5 +1,5 @@
 <?php
-class Cciudad extends CI_controler{
+class Cciudad extends CI_controller{
 
 
   function __construct()

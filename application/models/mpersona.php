@@ -39,7 +39,15 @@ return 1;
   //$this->db->where('idPersona',$idP);
   //$this->db->delete('usuario');
 } 
+public function getPerson(){
+  $this->db->select('p.nombre,p.appaterno,p.apmaterno,p.dni,c.ciudad');
+  $this->db->from('persona p');
+  $this->db->join('ciudades c','c.idCiudad=p.idCiudad');
 
+  $r=$this->db->get();
+
+  return $r->result();
+}
 
 }
 

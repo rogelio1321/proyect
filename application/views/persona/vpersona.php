@@ -59,8 +59,8 @@
       </div>
       <div class="form-group has-feedback">
         <div class="form-group">
-                  <select class="form-control">
-                    <option value="">Ciudad</option>
+                  <select id="cboCity" class="form-control">
+                    <option value="">City</option>
                   </select>
                 </div>
       </div>
@@ -88,7 +88,23 @@
         <!-- /.col -->
       </div>
       <a href="<?php echo base_url();?>clogin" class="text-center">Log in</a>
+      
     </form>
+    <br><br><br>
+      <button type="submit" id="btnGetPerson" class="btn btn-flat"><i class="fa fa-search"></i> &nbsp;Buscar
+       </button>
+
+       <table id="tblPerson" class="table table-bordered">
+                <tr>
+                  <th style="width: 10px">#</th>
+                  <th>DNI</th>
+                  <th>nombre</th>
+                  <th>paterno</th>
+                  <th>materno</th>
+                  <th>ciudad</th>
+                  
+                </tr>
+              </table>
 
     
 <!-- /.register-box -->
@@ -108,11 +124,10 @@
     });
   });
 </script>
-<script type="text/javascript">
-   var baseurl = "<?php echo base_url();?>";
-</script>
 
 </body>
 </html>
-
-
+           
+<script type="text/javascript">
+   var baseurl = "<?php echo base_url(); ?>";
+</script>
