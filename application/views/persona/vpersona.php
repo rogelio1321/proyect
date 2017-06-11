@@ -91,20 +91,29 @@
       
     </form>
     <br><br><br>
-      <button type="submit" id="btnGetPerson" class="btn btn-flat"><i class="fa fa-search"></i> &nbsp;Buscar
+      <button type="button" id="btnGetPerson" class="btn btn-flat"><i class="fa fa-search"></i> &nbsp;Buscar
        </button>
 
        <table id="tblPerson" class="table table-bordered">
                 <tr>
                   <th style="width: 10px">#</th>
-                  <th>DNI</th>
+                  
                   <th>nombre</th>
                   <th>paterno</th>
                   <th>materno</th>
+                  <th>DNI</th>
                   <th>ciudad</th>
                   
                 </tr>
               </table>
+              <tr>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+              </tr> 
 
     
 <!-- /.register-box -->

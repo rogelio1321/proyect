@@ -42,7 +42,7 @@ return 1;
 public function getPerson(){
   $this->db->select('p.nombre,p.appaterno,p.apmaterno,p.dni,c.ciudad');
   $this->db->from('persona p');
-  $this->db->join('ciudades c','c.idCiudad=p.idCiudad');
+  $this->db->join('ciudades c','c.idCiudad = p.idCiudad');
 
   $r=$this->db->get();
 

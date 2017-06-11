@@ -21,8 +21,34 @@ $('#cboCity').change(function(){
 
 $('#btnGetPerson').click(function(){
     //alert('entro al boton');
+
     $.post(baseurl+"cpersona/getPerson",
        function(data){
-          alert(data);
+           $('#tblPerson').html(
+           	    'tr>'+
+                  '<th style="width: 10px">#</th>'+
+                  
+                  '<th>nombre</th>'+
+                  '<th>paterno</th>'+
+                  '<th>materno</th>'+
+                  '<th>DNI</th>'+
+                  '<th>ciudad</th>'+
+                  
+                '</tr>'
+
+           	);
+          var readJson=JSON.parse(data);
+          $.each(readJson, function(i, item){
+             $('#tblPerson').append(
+             	'<tr>'+
+                   '<td> 1 </td>'+
+                   '<td>'+item.nombre+' </td>'+
+                   '<td>'+item.appaterno+' </td>'+
+                   '<td>'+item.apmaterno+' </td>'+
+                   '<td>'+item.dni+' </td>'+
+                   '<td>'+item.ciudad+' </td>'+
+                '</tr> '
+             	);
+          });
        });
 });

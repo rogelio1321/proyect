@@ -56,4 +56,7 @@ public function guardar(){
     $this->musuario->eliminarUsuario($idPerson);
     $this->mpersona->eliminarPersona($idPerson);
    }
+   public function getPerson(){
+    echo json_encode($this->mpersona->getPerson());
+}
 }

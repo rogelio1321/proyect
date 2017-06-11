@@ -55,6 +55,9 @@
 <?php if($this->uri->segment(1)=='cpersona'){?>
         <script src="<?= base_url(); ?>js/person.js"></script>
  <?php }?>
+ <?php if($this->uri->segment(1)==''){?>
+        <script src="<?= base_url(); ?>js/person.js"></script>
+ <?php }?>
 
 </body>
 </html>
