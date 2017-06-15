@@ -1,6 +1,3 @@
-<head>
-  <title>calificaciones del 0 al 10</title>
-</head>
 <div class="col-sm-8">
 	  <div class="box box-primary">
 
@@ -20,7 +17,7 @@
        </div>
 </div>   
 <div class="col-sm-1"> 
-<button type="button" class="btn btn-block btn-primary">guardar</button>
+<button type="button" class="btn btn-block btn-primary" id="btnSave">guardar</button>
 </div>
 <script type="text/javascript">
    var baseurl = "<?php echo base_url(); ?>";             

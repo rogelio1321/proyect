@@ -18,5 +18,16 @@ class Mnotes extends CI_Model{
    	$queryNotes=$this->db->get();
    	return $queryNotes->result();
    }
+   public function saveNotes($parameter){
+    $rows = array(
+      'idPersona'=> $parameter['idperson'],
+      'Primerbimestre'=> $parameter['noteone'],
+      'Segundobimestre'=> $parameter['notetwo'],
+      'Tercerbimestre'=> $parameter['notethree'],
+      'Cuartobimestre'=> $parameter['notefour'],
+      'Notafinal'=> $parameter['notefinal']
+      );
+    $this->db->insert('notas',$rows);
+   }
    
    }
