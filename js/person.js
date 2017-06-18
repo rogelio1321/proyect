@@ -1,3 +1,4 @@
+
 $.post(baseurl+"cciudad/getCiudades",
    {
 	"sitReg" : 1
@@ -14,7 +15,7 @@ $.post(baseurl+"cciudad/getCiudades",
 $('#cboCity').change(function(){
 	$('#cboCity option:selected').each(function(){
 		var id=$('#cboCity').val();
-        alert(id);
+        //alert(id);
 	});
 
 });

@@ -14,4 +14,11 @@ class Cciudad extends CI_controller{
         echo json_encode($resultado);
  	}
 
+ 	public function index(){
+ 		$this->load->view('layout/header');
+ 		$this->load->view('layout/menu');
+ 		$this->load->view('vtest');
+ 		$this->load->view('layout/footer');
+ 	}
+
 }

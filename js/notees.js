@@ -6,7 +6,7 @@ $.post(baseurl+"cnotes/getNotes",
 		$.each(obj, function(i, item){
 			$('#tblNotes').append(
 				'<tr class="rownotes">'+
-				    '<td></td>'+
+				    
 				    '<td>1</td>'+
 				    '<td><div class="student" id="'+item.idPersona+'"></div>'+item.alumno+'</td>'+
 				    '<td><input type="text" value="'+item.Primerbimestre+'" style="'+stl+'" maxlength="2" class="note1"></td>'+
@@ -47,7 +47,7 @@ $.post(baseurl+"cnotes/getNotes",
 $('#btnSave').click(function(){
 	var index=0;
 	$('#tblNotes .rownotes').each(function(){
-		var idperson = $('.student').attr('id');
+		var idperson = $('.student:eq('+index+')').attr('id');
 		var noteone = $('.note1:eq('+index+')').val();
 		var notetwo = $('.note2:eq('+index+')').val();
 		var notethree = $('.note3:eq('+index+')').val();
@@ -63,10 +63,11 @@ $('#btnSave').click(function(){
 				notefinal:notefinal
 			},
 			function(data){
-				alert (data);
+				//alert(data);
 			});
 		index++;
 
   
 	});
+	alert('datos guardados');
 });

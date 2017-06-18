@@ -61,7 +61,11 @@
  <?php }?>
 
  <?php if($this->uri->segment(1)=='cnotes'){?>
-        <script src="<?= base_url(); ?>js/notas.js"></script>
+        <script src="<?= base_url(); ?>js/notees.js"></script>
+ <?php }?>
+
+ <?php if($this->uri->segment(1)=='cciudad'){?>
+        <script src="<?= base_url(); ?>js/city.js"></script>
  <?php }?>
 
 </body>
